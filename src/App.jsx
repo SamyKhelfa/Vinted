@@ -33,6 +33,12 @@ function App() {
         <button>Se connecter</button>
         <button>Vends tes articles</button>
       </header>
+      <img
+        className="home"
+        src="./src/assets/img/home.jpg"
+        alt="home"
+        style={{ width: "1900px", height: "450px" }}
+      />
       {data.map((item) => (
         <div key={item._id}>
           <h2>{item.product_name}</h2>

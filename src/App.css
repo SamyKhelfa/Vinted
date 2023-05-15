@@ -3,6 +3,12 @@
   height: 45px;
 }
 
-.header input {
-  margin-left: auto;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.home {
+  object-fit: cover;
 }
