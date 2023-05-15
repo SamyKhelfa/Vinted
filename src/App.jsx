@@ -33,12 +33,18 @@ function App() {
         <button>Se connecter</button>
         <button>Vends tes articles</button>
       </header>
-      <img
-        className="home"
-        src="./src/assets/img/home.jpg"
-        alt="home"
-        style={{ width: "1900px", height: "450px" }}
-      />
+      <div className="img-container">
+        <img
+          className="home"
+          src="./src/assets/img/home.jpg"
+          alt="home"
+          style={{ width: "1900px", height: "450px" }}
+        />
+        <div className="overlay">
+          <h1>Prêts à faire du tri dans vos placards ?</h1>
+          <button>Commencer à vendre</button>
+        </div>
+      </div>
       {data.map((item) => (
         <div key={item._id}>
           <h2>{item.product_name}</h2>
