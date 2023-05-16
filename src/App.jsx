@@ -24,14 +24,15 @@ function App() {
           style={{ width: "150px", height: "80px" }}
         />
         <input
+          className="search"
           type="search"
           id="query"
           name="q"
           placeholder="Recherche des articles"
         />
-        <button>S'inscrire</button>
-        <button>Se connecter</button>
-        <button>Vends tes articles</button>
+        <button className="header-button signup">S'inscrire</button>
+        <button className="header-button login">Se connecter</button>
+        <button className="header-button sold">Vends tes articles</button>
       </header>
       <div className="img-container">
         <img
@@ -45,14 +46,17 @@ function App() {
           <button>Commencer à vendre</button>
         </div>
       </div>
-      {data.map((item) => (
-        <div key={item._id}>
-          <h2>{item.product_name}</h2>
-          <p>{item.product_description}</p>
-          <p>{item.product_price} €</p>
-          <img src={item.product_image.url} alt={item.product_name} />
-        </div>
-      ))}
+      <div className="offer-container">
+        {data.map((item) => (
+          <div className="offers" key={item._id}>
+            <h2>{item.product_name}</h2>
+            <img src={item.product_image.url} alt={item.product_name} />
+            <p>{item.product_price} €</p>
+            <p>{item.product_details[1].TAILLE}</p>{" "}
+            <p>{item.product_details[0].MARQUE}</p>{" "}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
