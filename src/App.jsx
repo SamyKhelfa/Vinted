@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css"; // assurez-vous d'importer votre fichier CSS
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   const [data, setData] = useState([]);

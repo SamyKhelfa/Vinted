@@ -96,26 +96,38 @@
 }
 
 .offer-container {
+  display: flex;
   justify-content: space-around;
-  flex-direction: column;
+  flex-wrap: wrap; /* permet aux éléments de passer à la ligne suivante */
+  flex-direction: row; /* affiche les offres horizontalement */
   cursor: pointer;
   padding: 0 6px 16px;
-  width: 235px;
 }
 
 .offers {
-  gap: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  height: auto; /* assurez-vous que la hauteur de l'élément est automatique */
   width: 247px;
-  height: 479px;
   margin: 10px;
   border-radius: 5px;
-  padding: 2px;
+  padding: 10px;
+  justify-content: space-between;
+  gap: 13px; /* distribuer l'espace également entre les éléments */
 }
 
 .offers img {
-  width: 234px;
-  height: 460px;
+  width: 100%;
+  height: 400px; /* ajustez cette valeur comme vous le souhaitez */
   object-fit: cover;
+}
+
+.offers h2,
+.offers p {
+  text-overflow: ellipsis; /* ajoute des points de suspension si le texte est trop long */
+  overflow: hidden; /* cache le texte qui déborde de l'élément */
+  width: 100%; /* la largeur doit correspondre à la largeur de l'élément parent */
+  max-height: 50px; /* ajoutez une hauteur maximale à l'élément pour éviter qu'il ne s'étende trop */
+  white-space: nowrap; /* empêche le texte de passer à la ligne suivante */
 }
