@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom"; //rappel
 
 function HomePage() {
   const [data, setData] = useState([]);
@@ -48,11 +49,13 @@ function HomePage() {
       <div className="offer-container">
         {data.map((item) => (
           <div className="offers" key={item._id}>
-            <h2>{item.product_name}</h2>
-            <img src={item.product_image.url} alt={item.product_name} />
-            <p>{item.product_price} €</p>
-            <p>{item.product_details[1].TAILLE}</p>{" "}
-            <p>{item.product_details[0].MARQUE}</p>{" "}
+            <Link to="/offer/:id" className="offers">
+              <h2>{item.product_name}</h2>
+              <img src={item.product_image.url} alt={item.product_name} />
+              <p>{item.product_price} €</p>
+              <p>{item.product_details[1].TAILLE}</p>
+              <p>{item.product_details[0].MARQUE}</p>
+            </Link>
           </div>
         ))}
       </div>
