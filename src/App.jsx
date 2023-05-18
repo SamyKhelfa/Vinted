@@ -1,18 +1,15 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Components/Home";
 import Offer from "./Components/Offer";
+import "./App.css";
 
 function App() {
   return (
     <Router>
       <nav>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/Offer">Offer</Link>
-          </li>
+          <li></li>
+          <li></li>
         </ul>
       </nav>
       <Routes>

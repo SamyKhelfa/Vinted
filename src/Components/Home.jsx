@@ -16,6 +16,23 @@ function HomePage() {
 
   return (
     <div>
+      <header className="header">
+        <img
+          src="./src/assets/img/vinted.png"
+          alt="logo"
+          style={{ width: "150px", height: "80px" }}
+        />
+        <input
+          className="search"
+          type="search"
+          id="query"
+          name="q"
+          placeholder="Recherche des articles"
+        />
+        <button className="header-button signup">S'inscrire</button>
+        <button className="header-button login">Se connecter</button>
+        <button className="header-button sold">Vends tes articles</button>
+      </header>
       <div className="img-container">
         <img
           className="home"
