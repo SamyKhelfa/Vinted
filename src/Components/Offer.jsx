@@ -6,14 +6,30 @@ const Offer = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
 
+  // Le Hook useEffect de React est appelé. C'est une fonction qui nous permet d'exécuter du code
+  // après chaque rendu du composant. Dans ce cas, le tableau de dépendances est vide, donc ce code
+  // ne s'exécutera qu'une fois après le premier rendu du composant.
   useEffect(() => {
+    // On déclare une nouvelle fonction asynchrone, fetchData.
     const fetchData = async () => {
+      // On fait une requête GET à l'API en utilisant axios. On utilise l'opérateur await pour
+      // s'assurer que JavaScript attend la résolution de cette promesse avant de continuer. L'URL
+      // de l'API utilise l'interpolation de chaînes pour inclure l'ID de l'offre que nous
+      // voulons récupérer.
       const result = await axios.get(
         `https://lereacteur-vinted-api.herokuapp.com/offers/${id}`
       );
+
+      // On utilise la fonction setData pour mettre à jour l'état de notre composant avec les
+      // données que nous avons reçues de l'API.
       setData(result.data);
     };
+
+    // Après avoir déclaré la fonction fetchData, on l'appelle pour qu'elle s'exécute.
     fetchData();
+
+    // On passe un tableau vide en deuxième argument à useEffect pour lui dire de ne déclencher cet
+    // effet qu'après le premier rendu du composant et non pas après chaque rendu.
   }, [id]);
 
   return (
