@@ -49,7 +49,7 @@ function HomePage() {
       <div className="offer-container">
         {data.map((item) => (
           <div className="offers" key={item._id}>
-            <Link to="/offer/:id" className="offers">
+            <Link to={"/offer/" + item._id} className="offers">
               <h2>{item.product_name}</h2>
               <img src={item.product_image.url} alt={item.product_name} />
               <p>{item.product_price} €</p>

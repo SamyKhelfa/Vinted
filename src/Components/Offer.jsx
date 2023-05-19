@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 const Offer = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
+  console.log(id);
 
   // Le Hook useEffect de React est appelé. C'est une fonction qui nous permet d'exécuter du code
   // après chaque rendu du composant. Dans ce cas, le tableau de dépendances est vide, donc ce code
@@ -17,7 +18,7 @@ const Offer = () => {
       // de l'API utilise l'interpolation de chaînes pour inclure l'ID de l'offre que nous
       // voulons récupérer.
       const result = await axios.get(
-        `https://lereacteur-vinted-api.herokuapp.com/offers/${id}`
+        `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
       );
 
       // On utilise la fonction setData pour mettre à jour l'état de notre composant avec les
