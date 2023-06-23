@@ -31,7 +31,7 @@ const Offer = () => {
 
     // On passe un tableau vide en deuxième argument à useEffect pour lui dire de ne déclencher cet
     // effet qu'après le premier rendu du composant et non pas après chaque rendu.
-  }, [id]);
+  }, []);
 
   return (
     <div>

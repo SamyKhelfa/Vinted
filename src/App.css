@@ -119,7 +119,7 @@
 
 .offers img {
   width: 100%;
-  height: 400px; /* ajustez cette valeur comme vous le souhaitez */
+  height: 400px;
   object-fit: cover;
 }
 
